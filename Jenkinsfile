@@ -3,19 +3,22 @@ pipeline {
     stages{
         stage("Development Environment"){
             steps{
-                echo "Installing packages ... "
-                npm install
+                sh 'echo "Installing packages ... "'
+                sh 'npm install --no-bin-links'
+                sh 'echo Starting server'
+                sh 'node index.js &'
             }
         }
-        stage('Test Environment')
+        stage('Test Environment'){
             steps{
-                echo "Starting express server for Testing"
-                npm start &
-                npm test
+                sh 'echo "Testing ... "'
+                sh 'npm test'
             }
         }
         stage('Production Environment'){
-            echo "Will be deployed on production environment"
+            steps{
+                sh 'echo "Will be deployed on production environment"'
+            }
         }
     }
 }
