@@ -18,6 +18,8 @@ pipeline {
         stage('Production Environment'){
             steps{
                 sh 'echo "Will be deployed on production environment"'
+                sh 'chmod +x deployment.sh'
+                sh './deployment.sh'
             }
         }
     }
