@@ -8,13 +8,7 @@ pipeline {
                 sh 'echo Starting server'
                 sh 'node index.js &'
             }
-        }
-        stage('Test Environment'){
-            steps{
-                sh 'echo "Testing ... "'
-                sh 'npm test'
-            }
-        }
+            
         stage('Production Environment'){
             steps{
                 sh 'echo "Will be deployed on production environment"'
