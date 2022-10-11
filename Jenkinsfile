@@ -10,9 +10,7 @@ pipeline {
         stage("Development Environment"){
             steps{
                 sh 'echo "Installing packages ... "'
-                sh 'npm install'
-                sh 'echo Starting server'
-                sh 'node index.js &'
+
             }
                 
 
