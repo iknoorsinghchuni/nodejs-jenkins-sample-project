@@ -1,8 +1,10 @@
 pipeline {
     agent any
     stages{
+        
         stage("Development Environment"){
             steps{
+                
                 sh 'echo "Installing packages ... "'
                 sh 'npm install --no-bin-links'
                 sh 'echo Starting server'
