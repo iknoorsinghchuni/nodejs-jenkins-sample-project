@@ -9,8 +9,6 @@ pipeline {
                 sh 'node index.js &'
             }
         }
-    }             
-      
         
         stage('Production Environment'){
             steps{
